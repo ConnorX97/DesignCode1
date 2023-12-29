@@ -40,7 +40,7 @@ struct ContentView: View {
                 .rotation3DEffect(.degrees(showCard ? 0 : 10) ,axis: (x: 10, y: 0, z: 0.0))
                 .blendMode(.hardLight)
                 .animation(.easeInOut(duration: 0.5), value: show)
-                .animation(.spring(response: 0.3, dampingFraction: 0.5), value: viewState)
+                .animation(.spring(response: 0.4, dampingFraction: 0.5), value: viewState)
                 .animation(.easeInOut(duration: 0.5), value: showCard)
             BackCardView()
                 .frame(width:340 ,height: 220)
@@ -86,11 +86,9 @@ struct ContentView: View {
                     
                 )
             
-            Text("\(bottomState.height)")
-                .offset(y: -300)
-                .foregroundColor(.red)
+            //Text("\(bottomState.height)").offset(y: -300).foregroundColor(.red)
             
-            BottomCardView()
+            BottomCardView(show: $showCard)
                 .offset(y: showCard ? 360 : 1000)
                 .offset(y: bottomState.height)
                 .blur(radius: show ? 20 : 0)
@@ -103,12 +101,15 @@ struct ContentView: View {
                             if self.showFull {
                                 self.bottomState.height += -300
                             }
+                            if self.bottomState.height < -300 {
+                                self.bottomState.height = -320
+                            }
                         }
                         .onEnded { value in
                             if self.bottomState.height > 50 {
                                 self.showCard = false
                             }
-                            if self.bottomState.height < -100 {
+                            if (self.bottomState.height < -100 && !self.showFull) || (self.bottomState.height < -250 && self.showFull) {
                                 self.bottomState.height = -300
                                 self.showFull = true
                             } else {
@@ -182,6 +183,10 @@ struct TitleView: View {
 }
 
 struct BottomCardView: View {
+    var color1 = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+    var color2 = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+    @Binding var show: Bool
+    
     var body: some View {
         VStack(spacing: 20) {
             Rectangle()
@@ -192,6 +197,7 @@ struct BottomCardView: View {
                 .multilineTextAlignment(.center)
                 .font(.subheadline)
                 .lineSpacing(4)
+            RingView(color1: color1 , color2: color2, width: 88, height: 88, percent: 50, show: $show)
             Spacer()
         }
         .padding(.top, 8)
@@ -203,3 +209,5 @@ struct BottomCardView: View {
         
     }
 }
+
+
