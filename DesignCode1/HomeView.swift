@@ -8,14 +8,15 @@ struct HomeView: View {
     @Binding var showProfile: Bool
     @State var showUpdate = false
     
-    var color1 = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
-    var color2 = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+
+   // #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
     
     var body: some View {
             VStack {
                 HStack {
                     Text("Watching")
-                        .font(.system(size: 28, weight: .bold))
+                      //  .font(.system(size: 28, weight: .bold))
+                        .modifier(CustomFontModifier(size: 28))
                     Spacer()
                     AvatarView(showProfile: $showProfile)
                     Button(action: {
@@ -40,22 +41,7 @@ struct HomeView: View {
                 .padding(.leading, 14)
                 .padding(.top, 30)
                 
-                HStack(spacing: 12.0) {
-                    RingView(color1: color1, color2: color2, width: 44, height: 44, percent: 78, show: .constant(true))
-                    VStack(alignment: .leading, spacing: 4.0) {
-                        Text("6 minutes left")
-                            .font(.subheadline)
-                        .fontWeight(.bold)
-                        Text("Watched 10 mins today")
-                            .font(.caption)
-                        
-                    }
-                }
-                        .padding(8)
-                        .background(.white)
-                        .cornerRadius(20)
-                        .shadow(color: .black .opacity(0.2), radius: 20, x: 0, y: 20)
-                    .shadow(color: .black .opacity(0.1), radius: 1, x: 0, y: 1)
+                WatchRingsView()
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -138,3 +124,46 @@ let sectionData = [
 //#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
 
 //#imageLiteral(resourceName: "Card4")
+
+struct WatchRingsView: View {
+    var color1 = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+    var color2 = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+    var body: some View {
+        HStack(spacing: 14.0) {
+            HStack(spacing: 12.0) {
+                RingView(color1: color1, color2: color2, width: 44, height: 44, percent: 78, show: .constant(true))
+                VStack(alignment: .leading, spacing: 4.0) {
+                    Text("6 minutes left")
+                        .bold()
+                        .modifier(FontModifier(style: .subheadline))
+                    Text("Watched 10 mins today")
+                        .modifier(FontModifier(style: .caption))
+                    
+                    
+                }
+            }
+            .padding(8)
+            .background(.white)
+            .cornerRadius(20)
+            .modifier(ShadowModifier())
+            
+            
+            HStack(spacing: 12.0) {
+                RingView(color1: UIColor(#colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)), color2: UIColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)), width: 44, height: 44, percent: 57, show: .constant(true))
+            }
+            .padding(8)
+            .background(.white)
+            .cornerRadius(20)
+            .modifier(ShadowModifier())
+            
+            
+            HStack(spacing: 12.0) {
+                RingView(color1: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), color2:#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), width: 44, height: 44, percent: 36, show: .constant(true))
+            }
+            .padding(8)
+            .background(.white)
+            .cornerRadius(20)
+            .modifier(ShadowModifier())
+        }
+    }
+}

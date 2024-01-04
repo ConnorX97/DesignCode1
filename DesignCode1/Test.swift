@@ -10,7 +10,8 @@ import SwiftUI
 struct Test: View {
     var body: some View {
             List(0 ..< 40) { item in
-                    Text("Data")  
+                    Text("Data")
+                    .modifier(CustomFontModifier(size: 12))
         }
     }
 }

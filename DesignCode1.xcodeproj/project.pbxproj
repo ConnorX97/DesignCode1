@@ -20,6 +20,9 @@
 		28B10A8F2B3AD5EC005AB1A8 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B10A8E2B3AD5EC005AB1A8 /* UpdateStore.swift */; };
 		28B10A912B3ADC04005AB1A8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B10A902B3ADC04005AB1A8 /* TabBar.swift */; };
 		28B10AAF2B3C1319005AB1A8 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B10AAE2B3C1319005AB1A8 /* Test.swift */; };
+		28B9C29B2B471609005C925D /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C29A2B471609005C925D /* Modifiers.swift */; };
+		28B9C2D02B471DBB005C925D /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28B9C2CE2B471D97005C925D /* WorkSans-Bold.ttf */; };
+		28B9C2D12B471DBE005C925D /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28B9C2CF2B471D97005C925D /* WorkSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		28B10A8E2B3AD5EC005AB1A8 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		28B10A902B3ADC04005AB1A8 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		28B10AAE2B3C1319005AB1A8 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		28B9C29A2B471609005C925D /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		28B9C2CC2B471BFD005C925D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		28B9C2CE2B471D97005C925D /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		28B9C2CF2B471D97005C925D /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +76,11 @@
 		28343C462B1DF7880066A9F7 /* DesignCode1 */ = {
 			isa = PBXGroup;
 			children = (
+				28B9C2CC2B471BFD005C925D /* Info.plist */,
 				28343C472B1DF7880066A9F7 /* DesignCode1App.swift */,
 				28343C492B1DF7880066A9F7 /* ContentView.swift */,
 				28392D3D2B3DD8CF0036E635 /* RingView.swift */,
+				28B9C29A2B471609005C925D /* Modifiers.swift */,
 				28123ECF2B396DDD00614AAF /* Home.swift */,
 				28B10A882B399ABD005AB1A8 /* HomeView.swift */,
 				28123ECD2B3962DD00614AAF /* MenuView.swift */,
@@ -81,6 +90,7 @@
 				28B10A8C2B3ACB14005AB1A8 /* UpdateDetail.swift */,
 				28B10A902B3ADC04005AB1A8 /* TabBar.swift */,
 				28343C4B2B1DF78A0066A9F7 /* Assets.xcassets */,
+				28B9C2CD2B471D78005C925D /* Font */,
 				28343C4D2B1DF78A0066A9F7 /* Preview Content */,
 			);
 			path = DesignCode1;
@@ -92,6 +102,15 @@
 				28343C4E2B1DF78A0066A9F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28B9C2CD2B471D78005C925D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				28B9C2CE2B471D97005C925D /* WorkSans-Bold.ttf */,
+				28B9C2CF2B471D97005C925D /* WorkSans-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,8 @@
 			files = (
 				28343C4F2B1DF78A0066A9F7 /* Preview Assets.xcassets in Resources */,
 				28343C4C2B1DF78A0066A9F7 /* Assets.xcassets in Resources */,
+				28B9C2D02B471DBB005C925D /* WorkSans-Bold.ttf in Resources */,
+				28B9C2D12B471DBE005C925D /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +189,7 @@
 				28B10A8D2B3ACB14005AB1A8 /* UpdateDetail.swift in Sources */,
 				28343C4A2B1DF7880066A9F7 /* ContentView.swift in Sources */,
 				28123ECE2B3962DD00614AAF /* MenuView.swift in Sources */,
+				28B9C29B2B471609005C925D /* Modifiers.swift in Sources */,
 				28B10A8B2B39AEEC005AB1A8 /* UpdateList.swift in Sources */,
 				28392D3E2B3DD8CF0036E635 /* RingView.swift in Sources */,
 				28B10A8F2B3AD5EC005AB1A8 /* UpdateStore.swift in Sources */,
@@ -311,6 +333,7 @@
 				DEVELOPMENT_TEAM = XQP4Q6TD9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DesignCode1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,6 +364,7 @@
 				DEVELOPMENT_TEAM = XQP4Q6TD9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DesignCode1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
