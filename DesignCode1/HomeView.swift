@@ -41,7 +41,11 @@ struct HomeView: View {
                 .padding(.leading, 14)
                 .padding(.top, 30)
                 
-                WatchRingsView()
+                ScrollView(.horizontal, showsIndicators: false) {
+                    WatchRingsView()
+                        .padding(.horizontal, 30)
+                        .padding(.bottom, 30)
+                }
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -129,7 +133,7 @@ struct WatchRingsView: View {
     var color1 = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
     var color2 = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
     var body: some View {
-        HStack(spacing: 14.0) {
+        HStack(spacing: 30.0) {
             HStack(spacing: 12.0) {
                 RingView(color1: color1, color2: color2, width: 44, height: 44, percent: 78, show: .constant(true))
                 VStack(alignment: .leading, spacing: 4.0) {
